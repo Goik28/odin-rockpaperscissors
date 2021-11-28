@@ -1,9 +1,9 @@
 function playerPlay() {
-    return window.prompt("Write your choice (Rock, Paper, Scissor)");
+    return window.prompt("Write your choice (Rock, Paper, Scissors)");
 }
 
 function computerPlay() {
-    let options =  ["Rock", "Paper", "Scissors"];
+    let options = ["Rock", "Paper", "Scissors"];
     return options[Math.floor(Math.random() * options.length)];
 }
 
@@ -57,35 +57,32 @@ function playRound(playerSelection, computerSelection) {
                 break;
         }
     }
-    return("algo errado");
+    return ("algo errado");
 }
 
 function game() {
     let playerWinCounter = 0;
     let computerWinCounter = 0;
     window.alert("This is a 5 round game of Rock-Paper-Scissors");
-    for (let index = 0; index < 4; index++) {
+    for (let index = 0; index <= 4; index++) {
         let message = playRound(playerPlay(), computerPlay());
-        switch (message) {
-            case message.includes("won"):
-                playerWinCounter++;
-                window.alert(message);
-                break;
-            case message.includes("lost"):
-                computerWinCounter++;
-                window.alert(message);
-                break;
-            case message.includes("tie"):
-                window.alert(message);
-                break;
+        if (message.includes("won")) {
+            playerWinCounter++;
+            window.alert(message);
+        }
+        if (message.includes("lost")) {
+            computerWinCounter++;
+            window.alert(message);
+        }
+        if (message.includes("tie")) {
+            window.alert(message);
         }
     }
     if (playerWinCounter > computerWinCounter) {
-        window.alert("You win! " + playerWinCounter + " x " + computerWinCounter + "for you.");
-    }
-    if (playerWinCounter < computerWinCounter) {
-        window.alert("You lost! " + playerWinCounter + " x " + computerWinCounter + "for the computer.");
+        window.alert("You win! " + playerWinCounter + " x " + computerWinCounter + " for you.");
+    } else if (playerWinCounter < computerWinCounter) {
+        window.alert("You lost! " + playerWinCounter + " x " + computerWinCounter + " for the computer.");
     } else {
-        window.alert("It was a tie! " + playerWinCounter + " x " + computerWinCounter + "for no one.")
+        window.alert("It was a tie! " + playerWinCounter + " x " + computerWinCounter + " for no one.")
     }
 }
