@@ -1,14 +1,15 @@
-function playerPlay(){
-
+function playerPlay() {
+    return window.prompt("Write your choice (Rock, Paper, Scissor)");
 }
 
 function computerPlay() {
-    return (random("Rock", "Paper", "Scissors"));
+    let options =  ["Rock", "Paper", "Scissors"];
+    return options[Math.floor(Math.random() * options.length)];
 }
 
-function play(playerSelection, computerSelection) {
-    insensitivePlayerSelection = playerSelection.toLowerCase;
-    if (insensitivePlayerSelection === "rock") {
+function playRound(playerSelection, computerSelection) {
+    let insensitivePlayerSelection = `${playerSelection}`.toLowerCase();
+    if (insensitivePlayerSelection == "rock") {
         switch (computerSelection) {
             case "Rock":
                 return ("It's a tie")
@@ -20,11 +21,11 @@ function play(playerSelection, computerSelection) {
                 return ("You won! Rock beats Scissors")
                 break;
             default:
-                return ("Error")
+                return ("Input not valid")
                 break;
         }
     }
-    if (insensitivePlayerSelection === "paper") {
+    if (insensitivePlayerSelection == "paper") {
         switch (computerSelection) {
             case "Rock":
                 return ("You won! Paper beats Rock")
@@ -36,11 +37,11 @@ function play(playerSelection, computerSelection) {
                 return ("You Lost! Scissors beats Paper")
                 break;
             default:
-                return ("Error")
+                return ("Input not valid")
                 break;
         }
     }
-    if (insensitivePlayerSelection === "scissors") {
+    if (insensitivePlayerSelection == "scissors") {
         switch (computerSelection) {
             case "Rock":
                 return ("You lost! Rock beats Scissors")
@@ -52,8 +53,39 @@ function play(playerSelection, computerSelection) {
                 return ("It's a tie")
                 break;
             default:
-                return ("Error")
+                return ("Input not valid")
                 break;
         }
+    }
+    return("algo errado");
+}
+
+function game() {
+    let playerWinCounter = 0;
+    let computerWinCounter = 0;
+    window.alert("This is a 5 round game of Rock-Paper-Scissors");
+    for (let index = 0; index < 4; index++) {
+        let message = playRound(playerPlay(), computerPlay());
+        switch (message) {
+            case message.includes("won"):
+                playerWinCounter++;
+                window.alert(message);
+                break;
+            case message.includes("lost"):
+                computerWinCounter++;
+                window.alert(message);
+                break;
+            case message.includes("tie"):
+                window.alert(message);
+                break;
+        }
+    }
+    if (playerWinCounter > computerWinCounter) {
+        window.alert("You win! " + playerWinCounter + " x " + computerWinCounter + "for you.");
+    }
+    if (playerWinCounter < computerWinCounter) {
+        window.alert("You lost! " + playerWinCounter + " x " + computerWinCounter + "for the computer.");
+    } else {
+        window.alert("It was a tie! " + playerWinCounter + " x " + computerWinCounter + "for no one.")
     }
 }
