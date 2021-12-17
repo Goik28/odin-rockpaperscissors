@@ -1,0 +1,50 @@
+body{
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    background-color: black;
+    color: whitesmoke;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+}
+
+h1,
+.repeat{
+    align-self: center;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-around;
+}
+
+.button{
+    flex: 1 1 0;
+    font-size: larger;
+    font-weight: 700;
+    padding: 15px;
+    margin: 15px;
+    border: 5px solid #ffff;
+}
+
+h3{
+    text-align: center;
+}
+
+li{
+padding: 5px;
+}
+
+.main,
+.explanation,
+.buttons,
+.log{
+    padding: 15px;
+    margin: 15px;
+    border: 5px solid #ffff;
+    border-radius: 30px;
+}
