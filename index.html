@@ -3,28 +3,39 @@
 
 <head>
     <meta charset="UTF-8">
-    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="script.js" defer></script>
     <title>Rock Paper Scissors</title>
-
-    <style>
-        body{
-            height: 50vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 25px;
-        }
-        input{            
-            width: 300px;
-            height: 300px;
-            font-weight: 900;
-            flex: 0 1 auto;
-        }
-    </style>
 </head>
 
 <body>
-    <input type="button" onclick="game()" value="Play Rock-Paper-Scissor">
+    <div class='main'>
+        <h1>ROCK-PAPER-SCISSORS GAME!</h1>
+        <div class='explanation'>
+            <h2>Explanation:</h2>
+            <p>Choose one: Rock, Paper or Scissor.</p>
+            <p> Rock beats Scissors. Scissors beat Paper.
+                Paper beats Rock.</p>
+            <p>Best of five, GO!</p>
+        </div>
+        <div class='buttons'>
+            <button class='button' id='rock'>ROCK!</button>
+            <button class='button' id='paper'>PAPER!</button>
+            <button class='button' id='scissors'>SCISSORS!</button>
+        </div>
+        <div class='log'>
+            <h3>Rounds</h3>
+            <ol>
+                <li id="li1"></li>
+                <li id="li2"></li>
+                <li id="li3"></li>
+                <li id="li4"></li>
+                <li id="li5"></li>
+            </ol>
+            <h3>Result:</h3>
+        </div>
+        <button class='button'>Start new round</button>
+    </div>
 </body>
 
 </html>
