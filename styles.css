@@ -8,6 +8,7 @@ body{
 }
 
 .main{
+    width: 760px;
     display: flex;
     flex-direction: column;
 }
@@ -35,8 +36,14 @@ h3{
     text-align: center;
 }
 
+ol{
+    list-style: none;
+    padding-left: 0;
+}
+
 li{
-padding: 5px;
+    padding: 5px;
+    text-align: center;
 }
 
 .main,
